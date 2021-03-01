@@ -21,6 +21,11 @@ steps:
 
 - script: npm test
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-RESULTS.xml'
+
 - script: |
     npm run build
   displayName: 'npm build'
